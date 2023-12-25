@@ -4,7 +4,7 @@ namespace MyHealth
 {
     internal class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost; port=3306; username=root; password=root; database=myhealth");
+        MySqlConnection connection = new MySqlConnection("server=sql11.freesqldatabase.com; port=3306; username=sql11672722; password=SNI8RMCUH9; database=sql11672722");
         public void OpenConnection()
         {
             if (connection.State == System.Data.ConnectionState.Closed)
