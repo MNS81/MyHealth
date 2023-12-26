@@ -13,7 +13,7 @@ namespace MyHealth
             DataBase DB = new DataBase();
             DataTable DT = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand cmd = new MySqlCommand("select * from `healthstate` where username = @ul", DB.GetConnection());
+            MySqlCommand cmd = new MySqlCommand("select * from `healthstate` where username = @ul order by id desc", DB.GetConnection());
             cmd.Parameters.Add("@ul", MySqlDbType.VarChar).Value = ConfigurationManager.AppSettings["USER"];
             adapter.SelectCommand = cmd;
             adapter.Fill(DT);
