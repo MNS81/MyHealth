@@ -49,6 +49,7 @@
             WriteValuesButton = new Button();
             StatusBar = new StatusStrip();
             StatusBarLabel = new ToolStripStatusLabel();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             InputValuesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UpPressureValueInput).BeginInit();
             ((System.ComponentModel.ISupportInitialize)HeartRateValueInput).BeginInit();
@@ -249,7 +250,7 @@
             ChangeUserButton.Size = new Size(92, 56);
             ChangeUserButton.TabIndex = 1;
             ChangeUserButton.UseVisualStyleBackColor = true;
-            ChangeUserButton.Click += this.ChangeUserButton_Click;
+            ChangeUserButton.Click += ChangeUserButton_Click;
             // 
             // WriteValuesButton
             // 
@@ -259,10 +260,11 @@
             WriteValuesButton.Size = new Size(92, 56);
             WriteValuesButton.TabIndex = 0;
             WriteValuesButton.UseVisualStyleBackColor = true;
+            WriteValuesButton.Click += WriteValuesButton_Click;
             // 
             // StatusBar
             // 
-            StatusBar.Items.AddRange(new ToolStripItem[] { StatusBarLabel });
+            StatusBar.Items.AddRange(new ToolStripItem[] { StatusBarLabel, toolStripStatusLabel1 });
             StatusBar.Location = new Point(0, 240);
             StatusBar.Name = "StatusBar";
             StatusBar.Size = new Size(318, 22);
@@ -273,6 +275,11 @@
             // 
             StatusBarLabel.Name = "StatusBarLabel";
             StatusBarLabel.Size = new Size(0, 17);
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(0, 17);
             // 
             // MyHealthApp
             // 
@@ -328,5 +335,6 @@
         private Button WriteValuesButton;
         private StatusStrip StatusBar;
         private ToolStripStatusLabel StatusBarLabel;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

@@ -23,7 +23,7 @@ namespace MyHealth
             adapter.Fill(DT);
             MessageBox.Show(DT.Rows.Count > 0 ? $"Привет {userLogin}!" : $"Пользователь {userLogin} не найден!");
         }
-        
+
         private void NewUserButton_Click(object sender, EventArgs e)
         {
             string userLogin = LoginInput.Text;
