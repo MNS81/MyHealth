@@ -3,8 +3,8 @@
 Добавлена форма входа и регистрации пользователей.
 
 Пример Key.cs
-
-namespace MyHealth\n
+```
+namespace MyHealth
 {
     internal class Key
     {
@@ -15,3 +15,4 @@ namespace MyHealth\n
         public const string BASE = "baseName";
     }
 }
+```
