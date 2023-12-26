@@ -2,9 +2,9 @@
 
 namespace MyHealth
 {
-    internal class DataBase
+    public class DataBase
     {
-        MySqlConnection connection = new MySqlConnection("server=sql11.freesqldatabase.com; port=3306; username=sql11672722; password=SNI8RMCUH9; database=sql11672722");
+        MySqlConnection connection = new MySqlConnection($"server={Key.SERVER};port={Key.PORT};username={Key.USER};password={Key.PASS};database={Key.BASE}");
         public void OpenConnection()
         {
             if (connection.State == System.Data.ConnectionState.Closed)

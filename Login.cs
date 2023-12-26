@@ -21,7 +21,7 @@ namespace MyHealth
             cmd.Parameters.Add("@up", MySqlDbType.VarChar).Value = userPassWord;
             adapter.SelectCommand = cmd;
             adapter.Fill(DT);
-            MessageBox.Show(DT.Rows.Count > 0 ? $"Привет {userLogin}!" : "Проверьте введённые данные!");
+            MessageBox.Show(DT.Rows.Count > 0 ? $"Привет {userLogin}!" : $"Пользователь {userLogin} не найден!");
         }
         
         private void NewUserButton_Click(object sender, EventArgs e)
