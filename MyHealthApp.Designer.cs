@@ -241,6 +241,7 @@
             ViewHealthBookButton.Size = new Size(92, 56);
             ViewHealthBookButton.TabIndex = 2;
             ViewHealthBookButton.UseVisualStyleBackColor = true;
+            ViewHealthBookButton.Click += ViewHealthBookButton_Click;
             // 
             // ChangeUserButton
             // 

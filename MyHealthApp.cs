@@ -11,7 +11,7 @@ namespace MyHealth
             ClearInputFields();
         }
 
-        public void ChangeUserButton_Click(object sender, EventArgs e)
+        private void ChangeUserButton_Click(object sender, EventArgs e)
         {
             Login User = new Login();
             User.Show();
@@ -64,6 +64,12 @@ namespace MyHealth
             UpPressureValueInput.Text = "";
             LowPressureValueInput.Text = "";
             HeartRateValueInput.Text = "";
+        }
+
+        private void ViewHealthBookButton_Click(object sender, EventArgs e)
+        {
+            ViewTable table = new ViewTable();
+            table.Show();
         }
     }
 }

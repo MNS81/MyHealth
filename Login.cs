@@ -26,7 +26,7 @@ namespace MyHealth
             {
                 MessageBox.Show($"Привет {userLogin}!");
                 Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                config.AppSettings.Settings["USER"].Value = userLogin.ToString();
+                config.AppSettings.Settings["USER"].Value = userLogin;
                 config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
             }
