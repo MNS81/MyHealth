@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using static System.Net.Mime.MediaTypeNames;
+using System.Configuration;
 
 namespace MyHealth
 {
@@ -40,7 +40,7 @@ namespace MyHealth
             {
                 DataBase DB = new DataBase();
                 MySqlCommand cmd = new MySqlCommand("insert into `healthstate` (`username`, `date`, `time`, `up_pressure`, `low_pressure`, `heartrate`, `healthstate`) values (@un, @ud, @ut, @uu, @ul, @uh, @us)", DB.GetConnection());
-                cmd.Parameters.Add("@un", MySqlDbType.VarChar).Value = "test";
+                cmd.Parameters.Add("@un", MySqlDbType.VarChar).Value = ConfigurationManager.AppSettings["USER"];
                 cmd.Parameters.Add("@ud", MySqlDbType.VarChar).Value = dateTime[0];
                 cmd.Parameters.Add("@ut", MySqlDbType.VarChar).Value = dateTime[1];
                 cmd.Parameters.Add("@uu", MySqlDbType.Int32).Value = upPressure;

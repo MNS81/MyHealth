@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Configuration;
 using System.Data;
 
 namespace MyHealth
@@ -21,7 +22,16 @@ namespace MyHealth
             cmd.Parameters.Add("@up", MySqlDbType.VarChar).Value = userPassWord;
             adapter.SelectCommand = cmd;
             adapter.Fill(DT);
-            MessageBox.Show(DT.Rows.Count > 0 ? $"Привет {userLogin}!" : $"Пользователь {userLogin} не найден!");
+            if (DT.Rows.Count > 0)
+            {
+                MessageBox.Show($"Привет {userLogin}!");
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings["USER"].Value = userLogin.ToString();
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+            }
+            else
+                MessageBox.Show($"Пользователь {userLogin} не найден!");
         }
 
         private void NewUserButton_Click(object sender, EventArgs e)
