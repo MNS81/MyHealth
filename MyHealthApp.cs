@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System.Configuration;
 
 namespace MyHealth
@@ -17,7 +17,7 @@ namespace MyHealth
             User.Show();
         }
 
-        private void WriteValuesButton_Click(object sender, EventArgs e)
+        private async void WriteValuesButton_Click(object sender, EventArgs e)
         {
             string upPressure = UpPressureValueInput.Text;
             string lowPressure = LowPressureValueInput.Text;
@@ -51,6 +51,8 @@ namespace MyHealth
                 toolStripStatusLabel1.Text = cmd.ExecuteNonQuery() == 1 ? "Данные записаны" : "Ошибка записи данных!";
                 DB.CloseConnection();
             }
+            await Task.Delay(2000);
+            toolStripStatusLabel1.Text = "";
             ClearInputFields();
         }
 

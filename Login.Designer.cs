@@ -37,11 +37,14 @@
             NewUserButton = new PictureBox();
             OKButton = new PictureBox();
             CancelButton = new PictureBox();
+            statusStrip1 = new StatusStrip();
+            LoginStatusLabel = new ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             LoginButtonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)NewUserButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)OKButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CancelButton).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -142,12 +145,27 @@
             CancelButton.TabStop = false;
             CancelButton.Click += CancelButton_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { LoginStatusLabel });
+            statusStrip1.Location = new Point(0, 290);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(318, 22);
+            statusStrip1.TabIndex = 6;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // LoginStatusLabel
+            // 
+            LoginStatusLabel.Name = "LoginStatusLabel";
+            LoginStatusLabel.Size = new Size(0, 17);
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(318, 293);
+            ClientSize = new Size(318, 312);
             ControlBox = false;
+            Controls.Add(statusStrip1);
             Controls.Add(LoginButtonPanel);
             Controls.Add(PassWordInput);
             Controls.Add(LoginInput);
@@ -163,6 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)NewUserButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)OKButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)CancelButton).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,5 +198,7 @@
         private PictureBox CancelButton;
         private PictureBox OKButton;
         private PictureBox NewUserButton;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel LoginStatusLabel;
     }
 }
