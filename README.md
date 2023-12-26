@@ -4,7 +4,7 @@
 
 Пример Key.cs
 
-namespace MyHealth
+namespace MyHealth\n
 {
     internal class Key
     {
